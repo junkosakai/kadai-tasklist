@@ -15,7 +15,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-                $tasks = Task::all();
+        $tasks = Task::all();
 
         return view('tasks.index', [
             'tasks' => $tasks,
@@ -43,14 +43,15 @@ class TasksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $this->validate($request, [
             'status' => 'required|max:10',
+            'content' => 'required|max:10',
         ]);
             
         $task = new Task;
         $task->status = $request->status; 
-        $task->status = $request->status;
+        $task->content = $request->content;
         $task->save();
 
         return redirect('/');
@@ -97,10 +98,12 @@ class TasksController extends Controller
     {
         $this->validate($request, [
             'status' => 'required|max:10',
+            'content' => 'required|max:10',
         ]);
         
         $task = Task::find($id);
         $task->status = $request->status;
+        $task->content = $request->content;
         $task->save();
 
         return redirect('/');
