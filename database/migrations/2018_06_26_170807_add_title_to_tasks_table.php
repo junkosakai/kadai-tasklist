@@ -14,7 +14,11 @@ class AddTitleToTasksTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
             $table->string('status', 10);
+            $table->timestamps();
+
         });
         
     }

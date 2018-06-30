@@ -14,9 +14,8 @@
         </aside>
         <div class="col-xs-8">
             <ul class="nav nav-tabs nav-justified">
-                <li><a href="#">TimeLine</a></li>
-                <li><a href="#">Followings</a></li>
-                <li><a href="#">Followers</a></li>
+                <li><a href="#">ステータス</a></li>
+                <li><a href="#">タスク</a></li>
             </ul>
         </div>
     </div>
